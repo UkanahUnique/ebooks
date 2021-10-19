@@ -1,0 +1,322 @@
+<!DOCTYPE html><html>
+    <head>
+        <title> categorization of E-books</title>
+        <link rel="stylesheet" href="book.css">
+              <meta charset="utf-8">
+              <meta name="viewport" content="width=device-width, initial-scale=1">
+              <script src="jquery.min.js"></script>
+              <script src="bootstrap.min.js"></script>
+              <link rel="icon" href="Tlogo.png">
+              <link rel="stylesheet" href="info.css">
+            <meta name="viewport" content="width=device-width, initial-scale=1">
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+            <link rel = "stylesheet" href = "http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+            <link rel ="stylesheet" href="Ts.css">
+              <style type="text/css">
+              body{background-color: #FDE0F4;} 
+              #more{display:none;}
+              #abou{display:none;}
+            #myDiv{ width:100%; padding:50px 0; text-align: center; background-color: lightblue;margin-top: 20px;}    
+      
+              .ull {
+                list-style-type: none;margin: 0;padding: 0;overflow: hidden;background-color: #333;position: -webkit-sticky; /* Safari */
+                position: sticky;top: 0;}
+                 .red{list-style-type: none;margin: 0;padding: 0;overflow: hidden;position: -webkit-sticky; /* Safari */position: sticky;top: 0;}
+                 li {float: left;}
+                 li a {display: block;text-align:down;padding: 14px 16px;text-decoration: none;}
+      
+              li a:hover {
+                background-color: #111;
+              }
+      
+              .active {
+                background-color: #4CAF50;
+              }
+      
+      
+      .dropbtn {
+        background-color:skyblue;
+        color: white;
+        padding: 16px;
+        font-size: 16px;
+        border: none;
+        cursor: pointer;
+      }
+      
+      .dropbtn:hover, .dropbtn:focus {
+        background-color: skyblue;
+      }
+      
+      #myInput {
+        box-sizing: border-box;
+        background-image: url('searchicon.png');
+        background-position: 14px 12px;
+        background-repeat: no-repeat;
+        font-size: 16px;
+        padding: 14px 20px 12px 45px;
+        border: none;
+        border-bottom: 1px solid #ddd;
+      }
+      
+      #myInput:focus {outline: 3px solid #ddd;}
+      
+      .dropdown {
+        position: relative;
+        display: inline-block;
+      }
+      
+      .dropdown-content {
+        display: none;
+        position: absolute;
+        background-color: #f6f6f6;
+        min-width: 230px;
+        overflow: auto;
+        border: 1px solid #ddd;
+        z-index: 1;
+      }
+      
+      .dropdown-content a {
+        color: black;
+        padding: 12px 16px;
+        text-decoration: none;
+        display: block;
+      }
+      
+      .dropdown a:hover {background-color: #ddd;}
+      
+      .show {display: block;}
+      
+
+      .filterDiv {
+  float: left;
+  background-color: #ffffff;
+  color: black;
+  width: 150px;
+  line-height: 25px;
+  text-align: center;
+  margin: 2px;
+  display: none;
+}
+
+.container {
+  margin-top: 20px;
+  overflow: hidden;
+}
+
+
+/* Style the buttons */
+.btn {
+  border: none;
+  outline: none;
+  padding: 12px 16px;
+  background-color: #f1f1f1;
+  cursor: pointer;
+}
+
+.btn:hover {
+  background-color: #ddd;
+}
+
+.btn.active {
+  background-color: #666;
+  color: white;
+}
+
+.container a{
+  color:black;
+  
+}
+.container button{
+  background-color: skyblue; 
+}
+.filterDiv{
+  color: blue;
+}
+
+
+
+      
+      
+              </style>
+          </head>
+          <body>
+        
+      <div>
+          <ul class="ull">
+            <li ><a href="#" style="color:#F4B41A;font-size:25px;word-spacing: 10px;">The Federal Polytechnic Bida </a></li>  
+                
+             
+        <li style="float:right"><a href="#" style="color:white;font-size:25px;word-spacing: 10px;">Department of Computer Science</a></li>
+               
+      </ul>
+      </div>
+    <center>
+      <h3><b>WELCOME TO</b><b style="color: #F4B41A;"> MY-EBOOKS</b></h3>
+        <ul class="red">
+        </li><a href="home.html" style="font-size:20px;word-spacing: 10px;"><span class="fa fa-home" aria-hidden="true"> HOME </span></a></li>
+      </ul></center>
+<center>
+
+<h3>You can search catelog for books by the <span style="color:royalblue;"> Author</span> or <span style="color: royalblue;">Title</span> of the book by clicking the search button 
+  <button style="background-color: skyblue;color: white;"><a href="https://script.google.com/macros/s/AKfycbwjS_mMGtTamOJoOwJ1YWXgoTXTHVCv29yHoinFBVZp5DBqZv4YVld4vh1CRyoqPpHSXA/exec">search</a></button> </h3>
+
+  <h3>You can also search for books by the <span style="color:royalblue;">Subject</span> or by the <span style="color:royalblue;">Year</span> the book was published with these buttons</h3>
+  <center>
+  <div id="myBtnContainer">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script>
+    $(document).ready(function(){
+        $('#sho').click(function() {
+          $('.men').toggle("slide");
+        });
+    });
+    </script>
+    
+    <div id="sho"><button class="btn active"style="background-color:skyblue;">Search By Book Subject</div>
+     <div class="men" style="display:none;">
+  <button class="btn" onclick="filterSelection('all')"> All Subject</button>
+  <button class="btn" onclick="filterSelection('prog')"> Programing </button>
+  <button class="btn" onclick="filterSelection('pack')"> packages</button>
+  <button class="btn" onclick="filterSelection('database')"> DataBase</button>
+  <button class="btn" onclick="filterSelection('ttech')"> Trending Technologies</button>
+  <button class="btn" onclick="filterSelection('eng')"> Engineering Science</button>
+  <button class="btn" onclick="filterSelection('other')"> Others</button>
+  </div>
+</div></br>
+
+<div id="myBtnContainer">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script>
+$(document).ready(function(){
+    $('#show').click(function() {
+      $('.menu').toggle("slide");
+    });
+});
+</script>
+
+<div id="show"><button class="btn active" style="background-color:skyblue;">Search By Published Year</div>
+ <div class="menu" style="display:none;">
+  <button class="btn" onclick="filterSelection('all')"> All YEAR</button>
+  <button class="btn" onclick="filterSelection('2014')"> Before till 2014 </button>
+  <button class="btn" onclick="filterSelection('2015')"> 2015</button>
+  <button class="btn" onclick="filterSelection('2017')"> 2017</button>
+  <button class="btn" onclick="filterSelection('2018')"> 2018</button>
+  <button class="btn" onclick="filterSelection('2019')"> 2019</button>
+  <button class="btn" onclick="filterSelection('2020')"> 2020</button>
+  <button class="btn" onclick="filterSelection('2021')"> 2021</button>
+</div></div>
+
+
+
+</center>
+<div class="container"><div id="javaT">
+
+
+  <div class="filterDiv  2014 prog"> Adaptive Object Oriented Demeter Software Method<br> <b style=" color: #111;"> by:Karl Keiberherr    </b><br> <button style="background-color:skyblue ;"><a href=" https://drive.google.com/file/d/1UaxQwHSwG-KxlFzTt6xEfBTvcXzdPKQ3/view?usp=sharing" >Read</a></button></div>
+  
+  <div class="filterDiv  2015 prog">android Based Punjabi TTS System  <br><b style=" color: #111;">  by:Hardeep,Parminder Singh </b>   <br> <button style="background-color:skyblue ;"><a href=" https://drive.google.com/file/d/1pT5cWwS1mewGiJuFqv7cq1iXv_CWbIHG/view?usp=sharing    " >Read</a></button></div>
+ 
+  <div class="filterDiv  2021 prog eng"> Material Science and Engineering > <br><b style=" color: #111;">  by:  Scientific.Net    <br> <button style="background-color:skyblue ;"><a href="https://drive.google.com/file/d/1Q20-xEPx6XNSG8flkYHFmFHE8RsOWEWv/view?usp=sharing" >Read</a></button></div>
+ 
+    <div class="filterDiv  2020 prog ttech">Introduction to Autunomous Robots <br> <b style=" color: #111;">by: Nikolaus Correll  </b>  <br> <button style="background-color:skyblue ;"><a href=" https://drive.google.com/file/d/1364O1o_20gho-O2cIuk7UP-2hj5A_qAx/view?usp=sharing" >Read</a></button></div>
+ 
+  <div class="filterDiv  2015 prog ttech">Artificial Intelligence and  Molecular Biology  <br><img src="ai.JFIF" width="125PX" height="60PX"> <br> <b style=" color: #111;"> by: Lawrence and Lederberg</b><br> <button style="background-color:skyblue ;"><a href="   https://drive.google.com/file/d/1o0T3g3kyr0mgP1ldRvTPRDkeImma_RHu/view?usp=sharing    " >Read</a></button></div>
+  
+  <div class="filterDiv  2014 prog"> Artificial Intelligence and Cognition    <br><img src="ai.JFIF" width="125PX" height="60PX"> <br> <b style=" color: #111;"> by:  Antonio Lieto, Marco Cruciani </b>  <br> <button style="background-color:skyblue ;"><a href="https://drive.google.com/file/d/1qDEYHNYbSGXaCeIkkOGT5AN8lMhKDqhU/view?usp=sharing    " >Read</a></button></div>
+  
+  <div class="filterDiv  2014 pack">Coral and the Enviroment  <br><b style=" color: #111;"> by: Stephen F. Greb, Cortland F. Eble Douglas C. Peters, Alexander R. Papp</b><br> <button style="background-color:skyblue ;"><a href="https://drive.google.com/file/d/18aw8Hl-Gih2XTdJYgvi7zayg3bqYqzw8/view?usp=sharing" >Read</a></button></div>
+   
+  <div class="filterDiv  2020 prog ttech">Robotics <br> <b style=" color: #111;"> by: Nikolaus Correll</b><br> <button style="background-color:skyblue ;"><a href="https://drive.google.com/file/d/1KFLsu7uxMw-P_qrfHRldn-whE-dJHI7F/view?usp=sharing" >Read</a></button></div>
+
+
+   <div class="filterDiv database 2017"> Oracle<br><img src="oracle.PNG" width="105PX" height="60PX"> <br> <b style=" color: #111;"> by: JAVA T</b><br> <button style="background-color:skyblue ;"><a href="https://www.javatpoint.com/oracle-tutorial" >Read</a></button></div>
+  <div class="filterDiv database 2018"> MungoDB<br><img src="mongodb.PNG" width="125PX" height="60PX"> <br><b style=" color: #111;">  by: JAVA T</b><br> <button style="background-color:skyblue ;"><a href="https://www.javatpoint.com/mongodb-tutorial" >Read</a></button></div>
+  <div class="filterDiv cars 2020"> Artificial Intelligence<br><img src="ai.JFIF" width="125PX" height="60PX"> <br><b style=" color: #111;">  by: JAVA T</b><br> <button style="background-color:skyblue ;"><a href="https://www.javatpoint.com/artificial-intelligence-tutorial" >Read</a></button></div>
+   <div class="filterDiv  2018 eng ttech">Foundation of Artificial Intelligence    <br><b style=" color: #111;">  by: J.Heindler. H. Kitano, B. Nibel</b>    <br> <button style="background-color:skyblue ;"><a href="https://drive.google.com/file/d/1PSeNVTSNThGgGscizl30VM9H0cNeC2tM/view?usp=sharing " >Read</a></button></div>
+  <div class="filterDiv  2014 prog">Controlled Vocabularies <br><b style=" color: #111;">  by:Patricia Harping</b><br> <button style="background-color:skyblue ;"><a href="https://drive.google.com/file/d/1g2Fl2PNAybE0Kgj-9_xOhJygan78sjWh/view?usp=sharing" >Read</a></button></div>
+  <div class="filterDiv  2017 eng ttech">Ethical Artificial Intelligence<br><b style=" color: #111;">  by:Bill Hibbard </b>    <br> <button style="background-color:skyblue ;"><a href="https://drive.google.com/file/d/1YYN_ONNifyQHvt3NLap75dLUlEpzeEVT/view?usp=sharing    " >Read</a></button></div>
+ 
+  <div class="filterDiv  2015 prog"> Data Modelling Tecniques for Data Warehousing   <br><b style=" color: #111;">  by: Chuck, Dirk, Schau, Rhonda, Kim, Ann</b> <br> <button style="background-color:skyblue ;"><a href="  https://drive.google.com/file/d/1HXNEeH5pWUVmLHIrBeHmR_mVKLHa0Hhn/view?usp=sharing    " >Read</a></button></div>
+ 
+  
+
+
+  <div class="filterDiv database 2019"> SQL <br><img src="sql.PNG" width="125PX" height="60PX"> <br><b style=" color: #111;">  by: JAVA T</b><br> <button style="background-color:skyblue ;"><a href="https://www.javatpoint.com/sql-tutorial" >Read</a></button></div>
+  <div class="filterDiv ttech 2020 prog"> BlockChain <br><img src="blockchain.PNG" width="125PX" height="60PX"> <br><b style=" color: #111;">  by: JAVA T</b><br> <button style="background-color:skyblue ;"><a href="https://www.javatpoint.com/blockchain-tutorial" >Read</a></button></div>
+  <div class="filterDiv ttech 2020 prog"> ReactJS <br><img src="reactjs.PNG" width="125PX" height="60PX"> <br><b style=" color: #111;">  by: JAVA T</b><br> <button style="background-color:skyblue ;"><a href="https://www.javatpoint.com/reactjs-tutorial" >Read</a></button></div>
+  <div class="filterDiv  2019 prog"> Python <br><img src="python.PNG" width="125PX" height="60PX"> <br> <b style=" color: #111;"> by: JAVA T</b><br> <button style="background-color:skyblue ;"><a href="https://www.javatpoint.com/python-tutorial" >Read</a></button></div>
+  <div class="filterDiv  2017 prog"> JAVA <br><img src="java.PNG" width="125PX" height="60PX"> <br><b style=" color: #111;">  by: JAVA T</b><br> <button style="background-color:skyblue ;"><a href="https://www.javatpoint.com/java-tutorial" >Read</a></button></div>
+ 
+  <div class="filterDiv  2014 prog"> Image Processing in C <br><img src="c-programming.PNG" width="125PX" height="60PX"> <br><b style=" color: #111;">  by: Dewayne Philipps</b><br> <button style="background-color:skyblue ;"><a href="https://drive.google.com/file/d/1CiXhVBnJ406FuoPjsJ4Ep6IBXpQ_sgcv/view?usp=sharing    " >Read</a></button></div>
+  <div class="filterDiv  2018 prog ttech eng">Machine Learning with Neural Networks  <br><img src="#" width="125PX" height="60PX"> <br> <b style=" color: #111;">by: Bernhard Melig      </b>  <br> <button style="background-color:skyblue ;"><a href=" https://drive.google.com/file/d/1gGcHdxu8-VyYWOzmwl8wY_6iglSZU7gd/view?usp=sharing    " >Read</a></button></div>
+  <div class="filterDiv  2014 eng">   Sientific Software Engineering in a Nutshell   <br><b style=" color: #111;"> by:  Helmut G. Katzgraber  </b>  <br> <button style="background-color:skyblue ;"><a href="https://drive.google.com/file/d/1hMyh_t-IZDCxS1WsRLc9pqeEUp-1celT/view?usp=sharing " >Read</a></button></div>
+ 
+  <div class="filterDiv  2018 eng prog">Twitter Data Analytics<br><img src="#" width="125PX" height="60PX"> <br><b style=" color: #111;"> by:"Shamanth Kumar,Fred Morstatter Huan Liu</b> <br> <button style="background-color:skyblue ;"><a href=" https://drive.google.com/file/d/1V-52qBKZ7ymm2aEOw4JgV4v0N-oQ6aaX/view?usp=sharing" >Read</a></button></div>
+  <div class="filterDiv  2018 prog"> C++ <br><img src="cpp.PNG" width="125PX" height="60PX"> <br> <b style=" color: #111;">by: JAVA T</b><br> <button style="background-color:skyblue ;"><a href="https://www.javatpoint.com/cpp-tutorial" >Read</a></button></div>
+  <div class="filterDiv  2014 prog"> C-Programming <br><img src="c-programming.PNG" width="125PX" height="60PX"> <br><b style=" color: #111;"> by: JAVA T</b><br> <button style="background-color:skyblue ;"><a href="https://www.javatpoint.com/c-programming-language-tutorial" >Read</a></button></div>
+ 
+  <div class="filterDiv  2010 eng">TVET and Industry  <br><b style=" color: #111;"> by: Jumoke Soyemi, Olugbenga Babajide Soyemi</b><br> <button style="background-color:skyblue ;"><a href="https://drive.google.com/file/d/1tCdM4wirLcq80fIFpMqbB9JFz0ORBB8M/view?usp=sharing" >Read</a></button></div>
+  <div class="filterDiv  2017 other">Elements of Statistical Learning<br> <b style=" color: #111;">by: Trevor Hastie,Robert Tibshirani,Jerome Friedma</b> <br> <button style="background-color:skyblue ;"><a href="https://drive.google.com/file/d/1HEsWOyHREMTRUW7U1LexrhP4ESY4PAa1/view?usp=sharing" >Read</a></button></div>
+ 
+  
+  <div class="filterDiv  2018 other"> International Journal of Academic Research<br><b style=" color: #111;"> by: Jing Rui Tang, Earn Tzeh Tan, Ridzwan Che’ Rus, Mohamed Nor Azhari, Azman and Zaliza Hanapi </b><br> <button style="background-color:skyblue ;"><a href="https://drive.google.com/file/d/1alz4Cd4nWBZ1nXpnAm-6mvgBRs_5ULy6/view?usp=sharing" >Read</a></button></div>
+  <div class="filterDiv  2015 other">Social Reading and ebooks <br><b style=" color: #111;"> by:Harri HEIKKILÄ </b><br> <button style="background-color:skyblue ;"><a href="https://drive.google.com/file/d/1SvypNjI-5gmpi_PA6DcrkFQwrst3POob/view?usp=sharing" >Read</a></button></div>
+  <div class="filterDiv  2014 prog">specifying Systems<br> <b style=" color: #111;">by: Leslie Lamport</b><br> <button style="background-color:skyblue ;"><a href="https://drive.google.com/file/d/1SDPc-ex0MUwf1crdM9SaMNclYb50GMtX/view?usp=sharing" >Read</a></button></div>
+  <div class="filterDiv  2014 prog"> Spatial Thinking in Planning<br><b style=" color: #111;"> by: Yiping Fang, Vivek Shandas, Eugenio Arriaga Cordero </b><br> <button style="background-color:skyblue ;"><a href=" https://drive.google.com/file/d/1AHhoxQ1_uksjX6X5_zP8UR-HEkIZdsGF/view?usp=sharing" >Read</a></button></div>
+  <div class="filterDiv  2014 prog eng"> Software Architecture <br><b style=" color: #111;"> by: A. Bijlsma, B.J. Heerendr, E.E. Roubtsovair, S. Stuurman</b><br> <button style="background-color:skyblue ;"><a href=" https://drive.google.com/file/d/1wdz2mRNxIxIqByd_QX6e53UMuJQ0Ufl-/view?usp=sharing" >Read</a></button></div>
+  <div class="filterDiv  2014 prog">Software Engineering with Reusuable Component<br><b style=" color: #111;"> by: Johannes Sametinger</b><br> <button style="background-color:skyblue ;"><a href=" https://drive.google.com/file/d/17RbU4P2n2E7X2LPovC1VwKeHRKmZnxN2/view?usp=sharing" >Read</a></button></div>
+  <div class="filterDiv  2014 prog">Introduction to Computer System <br><b style=" color: #111;">by: Unknown Author</b><br> <button style="background-color:skyblue ;"><a href="https://drive.google.com/file/d/1l6p4SEGgIryS--3irvPwEotiJMNM_Her/view?usp=sharing" >Read</a></button></div>
+  <div class="filterDiv  2020 prog"> "Correlation of Gender, GPA and Multicultural to Emotional Intelligence Skill in STAD Cooperative Learning Multicultural Based <br> <b style=" color: #111;">by: Ivan Th. J. Weismann, Hengki Wijaya1,Helaluddin </b><br> <button style="background-color:skyblue ;"><a href="https://drive.google.com/file/d/1lX-gLek66rzk5GaWvGcb6KWGp-Hpxbnt/view?usp=sharing" >Read</a></button></div>
+ 
+
+</div>
+</div>
+<script>
+filterSelection("all")
+function filterSelection(c) {
+  var x, i;
+  x = document.getElementsByClassName("filterDiv");
+  if (c == "all") c = "";
+  for (i = 0; i < x.length; i++) {
+    w3RemoveClass(x[i], "show");
+    if (x[i].className.indexOf(c) > -1) w3AddClass(x[i], "show");
+  }
+}
+
+function w3AddClass(element, name) {
+  var i, arr1, arr2;
+  arr1 = element.className.split(" ");
+  arr2 = name.split(" ");
+  for (i = 0; i < arr2.length; i++) {
+    if (arr1.indexOf(arr2[i]) == -1) {element.className += " " + arr2[i];}
+  }
+}
+
+function w3RemoveClass(element, name) {
+  var i, arr1, arr2;
+  arr1 = element.className.split(" ");
+  arr2 = name.split(" ");
+  for (i = 0; i < arr2.length; i++) {
+    while (arr1.indexOf(arr2[i]) > -1) {
+      arr1.splice(arr1.indexOf(arr2[i]), 1);     
+    }
+  }
+  element.className = arr1.join(" ");
+}
+
+// Add active class to the current button (highlight it)
+var btnContainer = document.getElementById("myBtnContainer");
+var btns = btnContainer.getElementsByClassName("btn");
+for (var i = 0; i < btns.length; i++) {
+  btns[i].addEventListener("click", function(){
+    var current = document.getElementsByClassName("active");
+    current[0].className = current[0].className.replace(" active", "");
+    this.className += " active";
+  });
+}
+</script>
+
+ </div>
+</div>
+</body>
+</html>
